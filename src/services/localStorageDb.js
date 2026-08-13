@@ -1,5 +1,18 @@
 // LocalStorage-based Mock Database Provider for Coffee App
 
+// 1. Import all local images from the src/assets/ directory
+import iceLatteImg from "../assets/ice latte.jpg";
+import iceAmericanoImg from "../assets/ice americano.jpg";
+import iceMochaImg from "../assets/ice Mocha.jpg";
+import iceCaramelImg from "../assets/ice caramel.jpg";
+import matchaLatteImg from "../assets/matcha Latte.jpg";
+import milkTeaImg from "../assets/Milk Tea.jpg";
+import sakuraMatchaImg from "../assets/sakura matcha latte.jpg";
+import chocAlmondImg from "../assets/Chocolate Almond Croissants.jpg";
+import chocBerryImg from "../assets/Chocolate Berry Croissant Sandwich Center.jpg";
+import chocCroissantImg from "../assets/Chocolate croissant.jpg";
+import matchaAlmondImg from "../assets/Matcha Almond croissant.jpg";
+
 const SEED_PRODUCTS = [
   {
     id: "prod-1",
@@ -7,8 +20,7 @@ const SEED_PRODUCTS = [
     category: "drinks",
     price: 1.5,
     description: "Have a good day",
-    image:
-      "https://i.pinimg.com/736x/15/fb/d5/15fbd526120fdaf676f221ae2afd2359.jpg",
+    image: iceLatteImg,
     stock: 100,
     popular: true,
   },
@@ -18,8 +30,7 @@ const SEED_PRODUCTS = [
     category: "drinks",
     price: 1.5,
     description: "Have a good day",
-    image:
-      "https://i.pinimg.com/1200x/17/4a/4a/174a4aee10877e3122f00274d78dc439.jpg",
+    image: iceAmericanoImg,
     stock: 100,
     popular: true,
   },
@@ -29,8 +40,7 @@ const SEED_PRODUCTS = [
     category: "drinks",
     price: 1.5,
     description: "Have a good day",
-    image:
-      "https://i.pinimg.com/736x/8d/04/9b/8d049b6d7c39e5636f9267eba65771ea.jpg",
+    image: iceMochaImg,
     stock: 100,
     popular: false,
   },
@@ -40,8 +50,7 @@ const SEED_PRODUCTS = [
     category: "drinks",
     price: 1.5,
     description: "Have a good day",
-    image:
-      "https://i.pinimg.com/736x/8f/8a/56/8f8a564d29d298bfdf3b79e154473736.jpg",
+    image: iceCaramelImg,
     stock: 100,
     popular: true,
   },
@@ -51,8 +60,7 @@ const SEED_PRODUCTS = [
     category: "Tea",
     price: 1.5,
     description: "Have a good day",
-    image:
-      "https://i.pinimg.com/736x/9c/09/19/9c09190707cf13e2901aeb0468d9bfc9.jpg",
+    image: matchaLatteImg,
     stock: 100,
     popular: false,
   },
@@ -62,8 +70,7 @@ const SEED_PRODUCTS = [
     category: "Tea",
     price: 1.5,
     description: "Have a good day",
-    image:
-      "https://i.pinimg.com/736x/9a/df/e2/9adfe2501bccc57326e5c1743168d00d.jpg",
+    image: milkTeaImg,
     stock: 100,
     popular: false,
   },
@@ -73,8 +80,7 @@ const SEED_PRODUCTS = [
     category: "Tea",
     price: 1.5,
     description: "Have a good day",
-    image:
-      "https://i.pinimg.com/736x/df/b5/ec/dfb5ec9d661c0f203a702368bd40c856.jpg",
+    image: sakuraMatchaImg,
     stock: 100,
     popular: false,
   },
@@ -84,8 +90,7 @@ const SEED_PRODUCTS = [
     category: "Breakfast",
     price: 1.5,
     description: "Have a good day",
-    image:
-      "https://i.pinimg.com/1200x/b6/00/99/b60099c981130a432b148d882253e970.jpg",
+    image: chocAlmondImg,
     stock: 100,
     popular: false,
   },
@@ -95,8 +100,7 @@ const SEED_PRODUCTS = [
     category: "Breakfast",
     price: 1.5,
     description: "Have a good day",
-    image:
-      "https://i.pinimg.com/1200x/ce/8a/bc/ce8abc29383442021db3538e0c9dca99.jpg",
+    image: chocBerryImg,
     stock: 100,
     popular: false,
   },
@@ -106,8 +110,7 @@ const SEED_PRODUCTS = [
     category: "Breakfast",
     price: 1.5,
     description: "Have a good day",
-    image:
-      "https://i.pinimg.com/736x/01/e2/6d/01e26db795aed8a698033f7e6163ef77.jpg",
+    image: chocCroissantImg,
     stock: 100,
     popular: false,
   },
@@ -117,8 +120,7 @@ const SEED_PRODUCTS = [
     category: "Breakfast",
     price: 1.5,
     description: "Have a good day",
-    image:
-      "https://i.pinimg.com/736x/e9/ec/28/e9ec286e089724bd463536f2353f2b56.jpg",
+    image: matchaAlmondImg,
     stock: 100,
     popular: false,
   },
@@ -133,8 +135,7 @@ const SEED_SERVICES = [
     price: 45.0,
     duration: "90 Mins",
     category: "workshops",
-    image:
-      "https://i.pinimg.com/736x/8f/8a/56/8f8a564d29d298bfdf3b79e154473736.jpg",
+    image: iceCaramelImg,
   },
   {
     id: "srv-2",
@@ -144,8 +145,7 @@ const SEED_SERVICES = [
     price: 30.0,
     duration: "Monthly",
     category: "subscriptions",
-    image:
-      "https://i.pinimg.com/736x/8f/8a/56/8f8a564d29d298bfdf3b79e154473736.jpg",
+    image: iceCaramelImg,
   },
   {
     id: "srv-3",
@@ -155,8 +155,7 @@ const SEED_SERVICES = [
     price: 75.0,
     duration: "2 Hours",
     category: "workshops",
-    image:
-      "https://i.pinimg.com/736x/8f/8a/56/8f8a564d29d298bfdf3b79e154473736.jpg",
+    image: iceCaramelImg,
   },
 ];
 
