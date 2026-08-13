@@ -1,0 +1,286 @@
+.services-page {
+  padding: 4rem 0;
+}
+
+.services-header {
+  margin-bottom: 3rem;
+}
+.services-intro {
+  max-width: 600px;
+  margin: 0.5rem auto 0 auto;
+  color: var(--color-text-muted);
+}
+
+/* Tabs */
+.services-tabs {
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 4rem;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 1.5rem;
+}
+.services-tabs button {
+  padding: 0.75rem 2rem;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  transition: var(--transition-smooth);
+  color: var(--color-text-muted);
+}
+.services-tabs button:hover {
+  color: var(--color-text-main);
+  background-color: var(--color-bg-card);
+}
+.services-tabs button.active {
+  background-color: var(--color-primary);
+  color: var(--color-text-dark);
+}
+
+/* Service / Workshop Cards */
+.service-card {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+.service-img-container {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+.service-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.service-duration {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  background-color: rgba(13, 10, 8, 0.85);
+  border: 1px solid var(--color-border);
+  padding: 0.25rem 0.75rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-primary);
+}
+.service-info {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.service-info h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+.service-info p {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+.service-price-row {
+  border-top: 1px solid var(--color-border);
+  padding-top: 1rem;
+}
+.service-price {
+  font-size: 1.3rem;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--color-primary);
+}
+.service-price .price-unit {
+  font-size: 0.8rem;
+  font-family: var(--font-body);
+  color: var(--color-text-muted);
+  font-weight: 400;
+}
+
+/* Booking form area */
+.booking-form-area {
+  max-width: 900px;
+  margin: 0 auto;
+}
+.booking-flex {
+  gap: 3rem;
+}
+.booking-info-side {
+  flex: 1;
+}
+.booking-info-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: var(--border-radius);
+  margin-bottom: 1.5rem;
+}
+.booking-info-side h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+.booking-info-side .description {
+  color: var(--color-text-muted);
+  margin-bottom: 1.5rem;
+}
+.booking-details p {
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.booking-form-side {
+  flex: 1.2;
+}
+.booking-form-side h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-row {
+  gap: 1rem;
+}
+.flex-1 {
+  flex: 1;
+}
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+/* Success Banner */
+.success-banner {
+  padding: 3rem;
+}
+.success-icon {
+  color: var(--color-success);
+  margin-bottom: 1.5rem;
+}
+.success-banner h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.success-banner p {
+  color: var(--color-text-muted);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* Subscription Builder */
+.sub-builder {
+  gap: 3rem;
+}
+.sub-description-side {
+  flex: 1;
+  padding: 3rem;
+}
+.sub-description-side h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+.sub-description-side p {
+  color: var(--color-text-muted);
+  margin-bottom: 2rem;
+  line-height: 1.7;
+}
+.sub-benefits p {
+  margin-bottom: 0.75rem;
+  font-weight: 500;
+}
+
+.sub-customizer-side {
+  flex: 1.2;
+  padding: 3rem;
+}
+.sub-customizer-side h3 {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* Custom Radio style */
+.radio-group {
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+.radio-label {
+  flex: 1;
+  text-align: center;
+  padding: 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  background-color: var(--color-bg-input);
+  cursor: pointer;
+  font-weight: 500;
+  transition: var(--transition-smooth);
+}
+.radio-label input {
+  display: none;
+}
+.radio-label:hover {
+  border-color: var(--color-secondary);
+}
+.radio-label.active {
+  border-color: var(--color-primary);
+  background-color: rgba(212, 175, 55, 0.05);
+  color: var(--color-primary);
+}
+
+.sub-pricing-block {
+  border-top: 1px solid var(--color-border);
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+}
+.sub-pricing-block .label {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+.sub-pricing-block .price {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+/* Catering Form */
+.catering-form-area {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 4rem;
+}
+.catering-header {
+  margin-bottom: 3rem;
+}
+.catering-header h2 {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+}
+.catering-header p {
+  color: var(--color-text-muted);
+}
+.catering-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+@media (max-width: 992px) {
+  .booking-flex,
+  .sub-builder {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .catering-form-area {
+    padding: 2rem;
+  }
+}
+@media (max-width: 576px) {
+  .services-tabs {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .radio-group {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}

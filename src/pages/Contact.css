@@ -1,0 +1,160 @@
+.contact-page {
+  padding: 4rem 0;
+}
+
+.contact-header {
+  margin-bottom: 4rem;
+}
+.contact-intro {
+  max-width: 600px;
+  margin: 0.5rem auto 0 auto;
+  color: var(--color-text-muted);
+}
+
+.contact-grid {
+  gap: 3rem;
+  align-items: flex-start;
+}
+
+.contact-info-column {
+  flex-direction: column;
+  gap: 2rem;
+  height: 100%;
+}
+
+.info-card h2 {
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 0.5rem;
+}
+
+.info-item {
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.info-icon {
+  color: var(--color-primary);
+}
+.info-item h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+.info-item p {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+}
+
+.hours-block {
+  border-top: 1px solid var(--color-border);
+  padding-top: 1.5rem;
+}
+.hours-block h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+.hours-block p {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.map-card {
+  padding: 0;
+  height: 250px;
+}
+.map-placeholder {
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(rgba(28,22,18,0.7), rgba(28,22,18,0.7)), url('https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&q=80&w=600');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: var(--color-text-muted);
+  font-weight: 600;
+}
+.map-pin-icon {
+  color: var(--color-primary);
+  animation: float 3s ease-in-out infinite;
+}
+.map-latlong {
+  font-family: monospace;
+  font-size: 0.8rem;
+  color: var(--color-primary);
+  font-weight: 400;
+}
+
+.contact-form-column h2 {
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 0.5rem;
+}
+
+.success-inline {
+  background-color: rgba(78, 154, 81, 0.1);
+  border: 1px solid rgba(78, 154, 81, 0.2);
+  color: var(--color-success);
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  margin-bottom: 1.5rem;
+  gap: 0.75rem;
+}
+.success-inline p {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Messages History card styles */
+.message-history-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 0.5rem;
+}
+.msg-history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-height: 250px;
+  overflow-y: auto;
+}
+.msg-history-item {
+  padding: 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  background-color: var(--color-bg-input);
+}
+.msg-subject {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  letter-spacing: 0.05em;
+}
+.msg-date {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+.msg-body {
+  font-size: 0.85rem;
+  color: var(--color-text-main);
+  margin: 0.5rem 0;
+  font-style: italic;
+}
+.msg-status {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  gap: 0.25rem;
+}
