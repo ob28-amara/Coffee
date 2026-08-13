@@ -1,3 +1,9 @@
+// Add this line temporarily to force reset the old data
+localStorage.clear(); 
+
+import iceLatteImg from "../assets/ice latte.jpg";
+// ... other code ...
+
 // LocalStorage-based Mock Database Provider for Coffee App
 
 // 1. Import all local images from the src/assets/ directory
