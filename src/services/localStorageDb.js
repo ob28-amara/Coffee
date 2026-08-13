@@ -1,29 +1,26 @@
-// Add this line temporarily to force reset the old data
-localStorage.clear();
-
-import iceLatteImg from "../assets/ice latte.jpg";
-// ... other code ...
-
 // LocalStorage-based Mock Database Provider for Coffee App
 
-// 1. Import all local images from the src/assets/ directory
-import iceLatteImg from "../assets/ice latte.jpg";
-import iceAmericanoImg from "../assets/ice americano.jpg";
-import iceMochaImg from "../assets/ice Mocha.jpg";
-import iceCaramelImg from "../assets/ice caramel.jpg";
-import matchaLatteImg from "../assets/matcha Latte.jpg";
-import milkTeaImg from "../assets/Milk Tea.jpg";
-import sakuraMatchaImg from "../assets/sakura matcha latte.jpg";
-import chocAlmondImg from "../assets/Chocolate Almond Croissants.jpg";
-import chocBerryImg from "../assets/Chocolate Berry Croissant Sandwich Center.jpg";
-import chocCroissantImg from "../assets/Chocolate croissant.jpg";
-import matchaAlmondImg from "../assets/Matcha Almond croissant.jpg";
+// Force clear old product cache to load updated image paths
+localStorage.removeItem("coffee_products");
+
+// 1. Import all product images (ensure filenames in src/assets/ match these exact lowercase paths)
+import iceLatteImg from "../assets/ice-latte.jpg";
+import iceAmericanoImg from "../assets/ice-americano.jpg";
+import iceMochaImg from "../assets/ice-mocha.jpg";
+import iceCaramelImg from "../assets/ice-caramel.jpg";
+import matchaLatteImg from "../assets/matcha-latte.jpg";
+import milkTeaImg from "../assets/milk-tea.jpg";
+import sakuraMatchaImg from "../assets/sakura-matcha-latte.jpg";
+import chocAlmondImg from "../assets/chocolate-almond-croissants.jpg";
+import chocBerryImg from "../assets/chocolate-berry-croissant.jpg";
+import chocCroissantImg from "../assets/choclatecroissant.jpg";
+import matchaAlmondImg from "../assets/matcha-almond-croissant.jpg";
 
 const SEED_PRODUCTS = [
   {
     id: "prod-1",
-    name: "Ice latte",
-    category: "coffee",
+    name: "Ice Latte",
+    category: "Coffee",
     price: 1.5,
     description: "Have a good day",
     image: iceLatteImg,
@@ -32,8 +29,8 @@ const SEED_PRODUCTS = [
   },
   {
     id: "prod-2",
-    name: "Ice americano",
-    category: "coffee",
+    name: "Ice Americano",
+    category: "Coffee",
     price: 1.5,
     description: "Have a good day",
     image: iceAmericanoImg,
@@ -43,7 +40,7 @@ const SEED_PRODUCTS = [
   {
     id: "prod-3",
     name: "Ice Mocha",
-    category: "coffee",
+    category: "Coffee",
     price: 1.5,
     description: "Have a good day",
     image: iceMochaImg,
@@ -52,8 +49,8 @@ const SEED_PRODUCTS = [
   },
   {
     id: "prod-4",
-    name: "Ice Caramelt",
-    category: "coffee",
+    name: "Ice Caramel",
+    category: "Coffee",
     price: 1.5,
     description: "Have a good day",
     image: iceCaramelImg,
@@ -82,7 +79,7 @@ const SEED_PRODUCTS = [
   },
   {
     id: "prod-7",
-    name: "sakura matcha Latte",
+    name: "Sakura Matcha Latte",
     category: "Tea",
     price: 1.5,
     description: "Have a good day",
@@ -92,7 +89,7 @@ const SEED_PRODUCTS = [
   },
   {
     id: "prod-8",
-    name: "Chocolate Almond Croissants",
+    name: "Chocolate Almond Croissant",
     category: "Breakfast",
     price: 1.5,
     description: "Have a good day",
@@ -102,7 +99,7 @@ const SEED_PRODUCTS = [
   },
   {
     id: "prod-9",
-    name: "Chocolate Berry Croissant Sandwich Center",
+    name: "Chocolate Berry Croissant Sandwich",
     category: "Breakfast",
     price: 1.5,
     description: "Have a good day",
@@ -112,7 +109,7 @@ const SEED_PRODUCTS = [
   },
   {
     id: "prod-10",
-    name: "Chocolate croissant",
+    name: "Chocolate Croissant",
     category: "Breakfast",
     price: 1.5,
     description: "Have a good day",
@@ -122,7 +119,7 @@ const SEED_PRODUCTS = [
   },
   {
     id: "prod-11",
-    name: "Matcha Almond croissant",
+    name: "Matcha Almond Croissant",
     category: "Breakfast",
     price: 1.5,
     description: "Have a good day",
@@ -169,7 +166,7 @@ const SEED_USERS = [
   {
     id: "user-1",
     email: "admin@coffee.com",
-    password: "admin123", // in mock DB, keep plain text for simplicity of demonstration
+    password: "admin123",
     name: "Elara Roaster",
     role: "admin",
   },
@@ -181,7 +178,7 @@ const SEED_ORDERS = [
     customerId: "user-3",
     customerName: "Amelia Stone",
     items: [
-      { id: "prod-1", name: "Ice latte", price: 1.5, quantity: 2 },
+      { id: "prod-1", name: "Ice Latte", price: 1.5, quantity: 2 },
       { id: "prod-3", name: "Ice Mocha", price: 1.5, quantity: 1 },
     ],
     total: 2.25,
@@ -193,7 +190,7 @@ const SEED_ORDERS = [
     id: "ord-9822",
     customerId: "user-3",
     customerName: "Amelia Stone",
-    items: [{ id: "prod-2", name: "Ice americano", price: 1.5, quantity: 1 }],
+    items: [{ id: "prod-2", name: "Ice Americano", price: 1.5, quantity: 1 }],
     total: 1.5,
     status: "preparing",
     date: "2026-07-31T09:15:00.000Z",
@@ -201,7 +198,7 @@ const SEED_ORDERS = [
   },
 ];
 
-// Helper to initialize local storage
+// Helper function to initialize LocalStorage datasets
 function initStorage() {
   if (!localStorage.getItem("coffee_products")) {
     localStorage.setItem("coffee_products", JSON.stringify(SEED_PRODUCTS));
@@ -220,14 +217,14 @@ function initStorage() {
 initStorage();
 
 export const localStorageDb = {
-  // --- AUTH OPERATIONS ---
+  // --- AUTHENTICATION OPERATIONS ---
   login: async (email, password) => {
     initStorage();
     const users = JSON.parse(localStorage.getItem("coffee_users"));
     const user = users.find(
       (u) =>
         u.email.toLowerCase() === email.toLowerCase() &&
-        u.password === password,
+        u.password === password
     );
     if (!user) {
       throw new Error("Invalid email or password");
@@ -242,19 +239,19 @@ export const localStorageDb = {
     initStorage();
     const users = JSON.parse(localStorage.getItem("coffee_users"));
     if (users.find((u) => u.email.toLowerCase() === email.toLowerCase())) {
-      throw new Error("Email already registered");
+      throw new Error("Email address is already registered");
     }
     const newUser = {
       id: "user-" + Date.now(),
       email: email.toLowerCase(),
       password,
       name,
-      role: "customer", // default role
+      role: "customer",
     };
     users.push(newUser);
     localStorage.setItem("coffee_users", JSON.stringify(users));
 
-    // Auto-login
+    // Auto-login after registration
     const session = { ...newUser };
     delete session.password;
     localStorage.setItem("coffee_current_user", JSON.stringify(session));
@@ -280,14 +277,13 @@ export const localStorageDb = {
     users[idx] = { ...users[idx], ...data };
     localStorage.setItem("coffee_users", JSON.stringify(users));
 
-    // Sync current session if this is the active user
     const curUser = localStorageDb.getCurrentUser();
     if (curUser && curUser.id === userId) {
       const updatedSession = { ...users[idx] };
       delete updatedSession.password;
       localStorage.setItem(
         "coffee_current_user",
-        JSON.stringify(updatedSession),
+        JSON.stringify(updatedSession)
       );
     }
     return users[idx];
@@ -297,12 +293,12 @@ export const localStorageDb = {
     initStorage();
     const users = JSON.parse(localStorage.getItem("coffee_users"));
     const user = users.find(
-      (u) => u.email.toLowerCase() === email.toLowerCase(),
+      (u) => u.email.toLowerCase() === email.toLowerCase()
     );
     if (!user) {
       throw new Error("User email not found");
     }
-    return true; // Simulate success
+    return true;
   },
 
   // --- PRODUCTS CRUD ---
@@ -315,12 +311,10 @@ export const localStorageDb = {
     initStorage();
     const products = JSON.parse(localStorage.getItem("coffee_products"));
     if (product.id) {
-      // Edit
       const idx = products.findIndex((p) => p.id === product.id);
       if (idx === -1) throw new Error("Product not found");
       products[idx] = { ...products[idx], ...product };
     } else {
-      // Create
       const newProduct = {
         ...product,
         id: "prod-" + Date.now(),
@@ -350,12 +344,10 @@ export const localStorageDb = {
     initStorage();
     const services = JSON.parse(localStorage.getItem("coffee_services"));
     if (service.id) {
-      // Edit
       const idx = services.findIndex((s) => s.id === service.id);
       if (idx === -1) throw new Error("Service not found");
       services[idx] = { ...services[idx], ...service };
     } else {
-      // Create
       const newService = {
         ...service,
         id: "srv-" + Date.now(),
@@ -392,12 +384,10 @@ export const localStorageDb = {
     orders.push(newOrder);
     localStorage.setItem("coffee_orders", JSON.stringify(orders));
 
-    // Decrement product stocks
     const products = JSON.parse(localStorage.getItem("coffee_products"));
     newOrder.items.forEach((item) => {
       const prod = products.find((p) => p.id === item.id);
       if (prod && prod.category !== "drinks") {
-        // drinks have unlimited ingredients basically
         prod.stock = Math.max(0, prod.stock - item.quantity);
       }
     });
@@ -416,11 +406,10 @@ export const localStorageDb = {
     return orders[idx];
   },
 
-  // --- USER MANAGEMENT (ADMIN ONLY) ---
+  // --- USER MANAGEMENT ---
   getUsers: async () => {
     initStorage();
     const users = JSON.parse(localStorage.getItem("coffee_users"));
-    // Return users without passwords
     return users.map((u) => {
       const { password, ...rest } = u;
       return rest;
@@ -435,14 +424,13 @@ export const localStorageDb = {
     users[idx].role = newRole;
     localStorage.setItem("coffee_users", JSON.stringify(users));
 
-    // Sync current session if this is the active user
     const curUser = localStorageDb.getCurrentUser();
     if (curUser && curUser.id === userId) {
       const updatedSession = { ...users[idx] };
       delete updatedSession.password;
       localStorage.setItem(
         "coffee_current_user",
-        JSON.stringify(updatedSession),
+        JSON.stringify(updatedSession)
       );
     }
     return true;
