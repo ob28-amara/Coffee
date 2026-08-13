@@ -1,5 +1,5 @@
 // Add this line temporarily to force reset the old data
-localStorage.clear(); 
+localStorage.clear();
 
 import iceLatteImg from "../assets/ice latte.jpg";
 // ... other code ...
@@ -23,7 +23,7 @@ const SEED_PRODUCTS = [
   {
     id: "prod-1",
     name: "Ice latte",
-    category: "drinks",
+    category: "coffee",
     price: 1.5,
     description: "Have a good day",
     image: iceLatteImg,
@@ -33,7 +33,7 @@ const SEED_PRODUCTS = [
   {
     id: "prod-2",
     name: "Ice americano",
-    category: "drinks",
+    category: "coffee",
     price: 1.5,
     description: "Have a good day",
     image: iceAmericanoImg,
@@ -43,7 +43,7 @@ const SEED_PRODUCTS = [
   {
     id: "prod-3",
     name: "Ice Mocha",
-    category: "drinks",
+    category: "coffee",
     price: 1.5,
     description: "Have a good day",
     image: iceMochaImg,
@@ -53,7 +53,7 @@ const SEED_PRODUCTS = [
   {
     id: "prod-4",
     name: "Ice Caramelt",
-    category: "drinks",
+    category: "coffee",
     price: 1.5,
     description: "Have a good day",
     image: iceCaramelImg,
