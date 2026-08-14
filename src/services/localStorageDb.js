@@ -2,6 +2,7 @@
 
 // Clear old cached products to make sure new imported images display properly
 localStorage.removeItem("coffee_products");
+localStorage.removeItem("coffee_services");
 
 // 1. Import all product images (ensure filenames in src/assets/ match these exact lowercase paths)
 import iceLatteImg from "../assets/iced-latte.jpg";
