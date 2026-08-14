@@ -15,6 +15,9 @@ import chocAlmondImg from "../assets/chocolate-almond-croissant.jpg";
 import chocBerryImg from "../assets/chocolate-berry-croissant.jpg"; // កែសម្រួលដក space ចេញ
 import chocCroissantImg from "../assets/chocolate-croissant.jpg";
 import matchaAlmondImg from "../assets/atcha-almond-croissant.jpg";
+import espressoWorkshopImg from "../assets/espresso-workshop.jpg";
+import monthlySubscriptionImg from "../assets/monthly-subscription.jpg";
+import espressoMasterclassImg from "../assets/espresso-masterclass.jpg";
 
 const SEED_PRODUCTS = [
   {
