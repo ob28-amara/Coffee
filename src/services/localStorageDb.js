@@ -1,20 +1,20 @@
 // LocalStorage-based Mock Database Provider for Coffee App
 
-// Force clear old product cache to load updated image paths
+// Clear old cached products to make sure new imported images display properly
 localStorage.removeItem("coffee_products");
 
 // 1. Import all product images (ensure filenames in src/assets/ match these exact lowercase paths)
-import iceLatteImg from "../assets/ice-latte.jpg";
-import iceAmericanoImg from "../assets/ice-americano.jpg";
-import iceMochaImg from "../assets/ice-mocha.jpg";
-import iceCaramelImg from "../assets/ice-caramel.jpg";
+import iceLatteImg from "../assets/iced-latte.jpg";
+import iceAmericanoImg from "../assets/iced-americao.jpg";
+import iceMochaImg from "../assets/iced-mocha.jpg";
+import iceCaramelImg from "../assets/iced-caramel.jpg";
 import matchaLatteImg from "../assets/matcha-latte.jpg";
 import milkTeaImg from "../assets/milk-tea.jpg";
 import sakuraMatchaImg from "../assets/sakura-matcha-latte.jpg";
-import chocAlmondImg from "../assets/chocolate-almond-croissants.jpg";
-import chocBerryImg from "../assets/chocolate-berry-croissant.jpg";
-import chocCroissantImg from "../assets/choclatecroissant.jpg";
-import matchaAlmondImg from "../assets/matcha-almond-croissant.jpg";
+import chocAlmondImg from "../assets/chocolate-almond-croissant.jpg";
+import chocBerryImg from "../assets/chocolate-berry-croissant.jpg"; // កែសម្រួលដក space ចេញ
+import chocCroissantImg from "../assets/chocolate-croissant.jpg";
+import matchaAlmondImg from "../assets/atcha-almond-croissant.jpg";
 
 const SEED_PRODUCTS = [
   {
@@ -224,7 +224,7 @@ export const localStorageDb = {
     const user = users.find(
       (u) =>
         u.email.toLowerCase() === email.toLowerCase() &&
-        u.password === password
+        u.password === password,
     );
     if (!user) {
       throw new Error("Invalid email or password");
@@ -283,7 +283,7 @@ export const localStorageDb = {
       delete updatedSession.password;
       localStorage.setItem(
         "coffee_current_user",
-        JSON.stringify(updatedSession)
+        JSON.stringify(updatedSession),
       );
     }
     return users[idx];
@@ -293,7 +293,7 @@ export const localStorageDb = {
     initStorage();
     const users = JSON.parse(localStorage.getItem("coffee_users"));
     const user = users.find(
-      (u) => u.email.toLowerCase() === email.toLowerCase()
+      (u) => u.email.toLowerCase() === email.toLowerCase(),
     );
     if (!user) {
       throw new Error("User email not found");
@@ -430,7 +430,7 @@ export const localStorageDb = {
       delete updatedSession.password;
       localStorage.setItem(
         "coffee_current_user",
-        JSON.stringify(updatedSession)
+        JSON.stringify(updatedSession),
       );
     }
     return true;

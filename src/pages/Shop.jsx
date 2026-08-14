@@ -7,8 +7,8 @@ export default function Shop() {
   const { products, addToCart } = useApp();
   const [search, setSearch] = useState("");
 
-  // 1. Set default active category to "beans" (Whole Coffee Beans)
-  const [activeCategory, setActiveCategory] = useState("beans");
+  // Set default active category to "all"
+  const [activeCategory, setActiveCategory] = useState("all");
   const [sortBy, setSortBy] = useState("default");
 
   // Filtering & Sorting logic
@@ -18,8 +18,11 @@ export default function Shop() {
         prod.name.toLowerCase().includes(search.toLowerCase()) ||
         prod.description.toLowerCase().includes(search.toLowerCase());
 
-      // Filter directly by category
-      const matchesCategory = prod.category === activeCategory;
+      // Case-insensitive category comparison
+      const matchesCategory =
+        activeCategory === "all" ||
+        prod.category.toLowerCase() === activeCategory.toLowerCase();
+
       return matchesSearch && matchesCategory;
     })
     .sort((a, b) => {
@@ -71,6 +74,14 @@ export default function Shop() {
           <ul className="category-list">
             <li>
               <button
+                className={activeCategory === "all" ? "active" : ""}
+                onClick={() => setActiveCategory("all")}
+              >
+                All Products
+              </button>
+            </li>
+            <li>
+              <button
                 className={activeCategory === "coffee" ? "active" : ""}
                 onClick={() => setActiveCategory("coffee")}
               >
@@ -93,7 +104,6 @@ export default function Shop() {
                 Breakfast
               </button>
             </li>
-            <li></li>
           </ul>
         </aside>
 
@@ -102,13 +112,12 @@ export default function Shop() {
           {filteredProducts.length > 0 ? (
             <div className="grid grid-3">
               {filteredProducts.map((prod) => {
-                // Updated stock check condition to use "coffee" instead of "drinks"
                 const isOutOfStock =
-                  prod.stock <= 0 && prod.category !== "coffee";
+                  prod.stock <= 0 && prod.category.toLowerCase() !== "coffee";
                 const isLowStock =
                   prod.stock > 0 &&
                   prod.stock <= 5 &&
-                  prod.category !== "coffee";
+                  prod.category.toLowerCase() !== "coffee";
 
                 return (
                   <div
